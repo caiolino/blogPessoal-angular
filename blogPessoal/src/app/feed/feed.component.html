@@ -26,7 +26,7 @@
 
                     <hr class="mt-4 mb-4">
 
-                    <h6 class="mb-3 text-monoscape text-center">Pesquisar por titulo</h6>
+                    <h6 class="mb-3 text-monospace text-center">Pesquisar por titulo</h6>
 
                     <input type="text" class="form-control mb-3 w-100" placeholder="Pesquisar postagem">
 
@@ -39,11 +39,12 @@
         <div class="col-md-8">
 
             <div>
-                <h3 class="text-center mb-4 text-monoscape">Como tem sido minha experiência na Generation</h3>
+                <h3 class="text-center mb-4 text-monospace">Como tem sido minha experiência na Generation</h3>
 
                 <div class="form-grup">
-                    <label for="titulo" class="text-monoscape">Titulo:</label>
-                    <input type="text" name="titulo" id="titulo" class="form-control text-monospace" placeholder="Digite seu titilo">
+                    <label for="titulo" class="text-monospace">Titulo:</label>
+                    <input type="text" name="titulo" id="titulo" class="form-control text-monospace"
+                        placeholder="Digite seu titilo">
                 </div>
                 <div class="form-grup mb-2">
                     <label for="texto" class="text-monospace">Texto</label>
@@ -57,7 +58,23 @@
 
                 <hr class="mt-5 mt-5">
 
-                <h3 class="text-monospace text-center">Minhas Postagens</h3>
+                <h3 class="text-monospace text-center mb-5">Minhas Postagens</h3>
+
+                <div class="card mb-4" *ngFor="let postagem of listaPostagens">
+                    <div class="card-header">
+                      <h5 class="card-title">{{postagem.titulo}}</h5>  
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">{{postagem.texto}}</p>
+            
+                        <small class="form-text m-0 text-muted md-3 text-monospace">
+                            Postado em {{postagem.data | date: 'dd/MM/yyyy'}}
+                            às {{postagem.data | date: 'HH:mm'}}
+
+                        </small>
+            
+                    </div>
+                </div>
 
             </div>
 

@@ -44,16 +44,16 @@
                 <div class="form-grup">
                     <label for="titulo" class="text-monospace">Titulo:</label>
                     <input type="text" name="titulo" id="titulo" class="form-control text-monospace"
-                        placeholder="Digite seu titilo">
+                        placeholder="Digite seu titilo" [(ngModel)]="postagem.titulo">
                 </div>
                 <div class="form-grup mb-2">
                     <label for="texto" class="text-monospace">Texto</label>
                     <textarea name="texto" id="texto" cols="30" rows="4" class="form-control text-monospace"
-                        placeholder="Digite seu texto"></textarea>
+                        placeholder="Digite seu texto" [(ngModel)]="postagem.texto"></textarea>
                 </div>
 
                 <div class="d-flex justify-content-end">
-                    <button type="button" class="btn btn-outline-info w-25">Publicar</button>
+                    <button type="button" class="btn btn-outline-info w-25" (click)="publicar()">Publicar</button>
                 </div>
 
                 <hr class="mt-5 mt-5">
